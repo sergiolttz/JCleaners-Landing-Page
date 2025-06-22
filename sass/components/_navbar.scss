@@ -1,0 +1,50 @@
+@use '../abstracts/variables';
+
+.navbar {
+    position: fixed;
+    top: -100px;
+    left: 0;
+    width: 100%;
+    background-color: variables.$light-bg;
+    z-index: 1000;
+    padding: 1rem 2rem;
+    transition: top 0.5s ease;
+    border-bottom: 10px solid variables.$primary-color;
+    box-shadow: 0 0 10px variables.$shadow;
+
+    &.visible {
+        top: 0;
+    }
+
+    .navbar__container {
+        max-width: 90%;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+
+        :hover {
+            color: variables.$primary-color;
+            text-shadow: 0 0 10px variables.$shadow;
+        }
+    }
+
+
+    .navbar__menu {
+        display: flex;
+        gap: 1.5rem;
+        list-style: none;
+        margin-left: auto;
+    }
+
+    .logo-nav {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 115px;
+        padding: 0.5rem;
+        filter: drop-shadow(0 0 10px variables.$shadow); 
+    }
+}

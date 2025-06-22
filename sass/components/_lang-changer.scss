@@ -1,0 +1,43 @@
+@use '../abstracts/variables';
+
+.lang-switcher {
+  margin-left: 1rem;
+
+  button {
+    background-color: transparent;      
+    border: 1px solid variables.$secondary-color;
+    color: variables.$secondary-color;
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  
+    &:hover {
+      background-color: variables.$transparent-white;
+      box-shadow: 0 0 10px variables.$shadow;
+    }
+  }
+}
+
+.lang-switcher-nav {
+  margin-left: 1rem;
+
+  button {
+    background-color: transparent;
+    border: 1px solid variables.$primary-color;
+    color: variables.$primary-color;
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: variables.$primary-color;
+      border: 1px solid variables.$text-light;
+      color: variables.$text-light;
+      box-shadow: 0 0 10px variables.$shadow;
+    }
+  }
+}
