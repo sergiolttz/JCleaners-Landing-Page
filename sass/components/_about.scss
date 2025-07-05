@@ -34,8 +34,7 @@
     }
 
 
-    // Responsive
-    @media (max-width: 768px) {
+    @media (max-width: variables.$breakpoint-md) {
         height: auto;
         background-image: none;
         background-color: variables.$secondary-color;
@@ -43,6 +42,8 @@
         .about__container {
             flex-direction: column;
             text-align: center;
+            max-width: 100%;
+
         }
 
         .about__text {

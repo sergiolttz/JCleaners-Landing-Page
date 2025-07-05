@@ -15,9 +15,11 @@
 // components
 @use 'components/navbar';
 @use 'components/hero';
-@use 'components/buttons';
 @use 'components/lang-changer';
 @use 'components/about';
+@use 'components/services';
+@use 'components/card';
+@use 'components/button';
 
 // themes
 @use 'themes/themes';

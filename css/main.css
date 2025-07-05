@@ -159,10 +159,6 @@ button {
   cursor: pointer;
 }
 
-section {
-  padding: 4rem 0;
-}
-
 .navbar {
   position: fixed;
   top: -100px;
@@ -345,10 +341,107 @@ section {
   .about .about__container {
     flex-direction: column;
     text-align: center;
+    max-width: 100%;
   }
   .about .about__text {
     text-align: center;
   }
+}
+
+.services {
+  padding: 4rem 2rem;
+  background-color: #fff;
+}
+.services .services__title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #2da0d2;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.services__cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+.services__cards .card {
+  background-color: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 0 10px rgba(17, 17, 17, 0.3294117647);
+  max-width: 400px;
+  width: 100%;
+  padding: 2rem;
+  transition: transform 0.3s ease, filter 0.3s ease, opacity 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+.services__cards .card__content h3 {
+  font-size: 1.5rem;
+  color: #2da0d2;
+  margin-bottom: 1rem;
+}
+.services__cards .card__content p {
+  font-size: 1rem;
+  color: #222;
+  margin-bottom: 1rem;
+}
+.services__cards .card__content ul {
+  list-style: disc;
+  text-align: left;
+  padding-left: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+.services__cards .card__content ul li {
+  margin-bottom: 0.5rem;
+  color: #222;
+}
+@media (min-width: 768px) {
+  .services__cards:has(.card:hover) .card:not(:hover) {
+    filter: brightness(0.6) blur(2px);
+    opacity: 0.6;
+  }
+  .services__cards .card:hover {
+    transform: scale(1.03);
+    z-index: 2;
+    filter: none !important;
+    opacity: 1 !important;
+  }
+}
+@media (max-width: 768px) {
+  .services__cards {
+    flex-direction: column;
+    align-items: center;
+  }
+  .services__cards .card {
+    max-width: 90%;
+    transform: none !important;
+    filter: none !important;
+    opacity: 1 !important;
+  }
+  .services__cards .card:hover {
+    transform: none !important;
+  }
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+}
+.btn--primary {
+  background-color: #2da0d2;
+  color: #fefefe;
+}
+.btn--primary:hover {
+  background-color: #1b60a6;
 }
 
 .light-theme {
