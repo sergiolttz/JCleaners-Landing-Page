@@ -2,7 +2,9 @@
 
 .testimonials {
     padding: 4rem 2rem;
-    background-color: variables.$third-color;
+    background: linear-gradient(to bottom,
+            variables.$primary-color 0%,
+            lighten(variables.$primary-color, 10) 100%);
 
     .testimonials__title {
         font-size: 2rem;
