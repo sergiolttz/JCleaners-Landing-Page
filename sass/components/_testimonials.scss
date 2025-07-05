@@ -1,0 +1,21 @@
+@use '../abstracts/variables';
+
+.testimonials {
+    padding: 4rem 2rem;
+    background-color: variables.$third-color;
+
+    .testimonials__title {
+        font-size: 2rem;
+        font-weight: bold;
+        color: variables.$primary-color;
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+
+    .testimonials__container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2rem;
+    }
+}
