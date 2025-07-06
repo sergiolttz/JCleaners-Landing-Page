@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JCleaners Service</title>
     <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
 </head>
 
 <body>
@@ -78,7 +80,8 @@
               <li>Mudanzas</li>
               <li>Casas y Apartamentos</li>
             </ul>
-            <button class="btn btn--primary">Agenda tu limpieza residencial</button>
+            <a class="btn btn--primary" href="#contact">Agenda tu limpieza residencial</a
+              git>
           </div>
         </div>
     
@@ -92,7 +95,7 @@
               <li>Oficinas</li>
               <li>Negocios y tiendas</li>
             </ul>
-            <button class="btn btn--primary">Agenda tu limpieza comercial</button>
+            <a class="btn btn--primary" href="#contact">Agenda tu limpieza comercial</a>
           </div>
         </div>
       </div>
@@ -131,12 +134,20 @@
 
     <!-- CONTACTO -->
     <section class="contact" id="contact">
-        <h2>Contáctanos</h2>
-        <p>Instagram: <a href="https://www.instagram.com/jcleanersservice/">@jcleanersservice</a></p>
-        <p>Teléfono: <a href="tel:+1234567890">+1 (234) 567-890</a></p>
-        <p>Email: <a href="mailto:jcleanersservice@gmail.com"> jcleanersservice@gmail.com</a></p>
+      <h2 class="contact__title">Contáctanos</h2>
+      <p><i class="fab fa-instagram"></i> <a href="https://www.instagram.com/jcleanersservice/">@jcleanersservice</a></p>
+      <p><i class="fas fa-phone-alt"></i> <a href="tel:+19415366769">+1 (941) 536-6769</a></p>
+      <p><i class="fas fa-envelope"></i> <a href="mailto:jcleanersservice@gmail.com">jcleanersservice@gmail.com</a></p>
+    
+      <div class="contact__buttons">
+        <a href="mailto:jcleanersservice@gmail.com" class="btn btn--primary">
+          <i class="fas fa-envelope"></i> Contáctanos por correo
+        </a>
+        <a href="https://wa.me/19415366769" class="btn btn--primary" target="_blank" rel="noopener">
+          <i class="fab fa-whatsapp"></i> Escríbenos por WhatsApp
+        </a></div>
     </section>
-
+    
     <!-- FOOTER -->
     <footer class="footer">
         <p>© 2025 JCleaners Service - Sarasota, FL</p>
@@ -144,5 +155,18 @@
 
     <script src="js/main.js"></script>
 </body>
+
+<div class="floating-contact" id="floatingContact">
+  <button class="floating-contact__main" id="toggleContactMenu" aria-label="Contacto rápido">
+    <i class="fas fa-comment-dots"></i>
+  </button>
+  <div class="floating-contact__menu" id="contactMenu">
+    <a href="https://wa.me/19415366769" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
+    <a href="mailto:jcleanersservice@gmail.com"><i class="fas fa-envelope"></i></a>
+    <a href="tel:+19415366769"><i class="fas fa-phone"></i></a>
+    <a href="https://instagram.com/jcleanersservice" target="_blank"><i class="fab fa-instagram"></i></a>
+  </div>
+</div>
+
 
 </html>

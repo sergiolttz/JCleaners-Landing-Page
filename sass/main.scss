@@ -18,9 +18,11 @@
 @use 'components/about';
 @use 'components/services';
 @use 'components/testimonials';
+@use 'components/contact';
 @use 'components/lang-changer';
 @use 'components/card';
 @use 'components/button';
+@use 'components/floating-contact';
 
 // themes
 @use 'themes/themes';

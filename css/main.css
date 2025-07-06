@@ -364,6 +364,47 @@ button {
   gap: 2rem;
 }
 
+.contact {
+  padding: 4rem 2rem;
+  background-color: #e0f7fa;
+  text-align: center;
+}
+.contact .contact__title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #2da0d2;
+  margin-bottom: 1.5rem;
+}
+.contact p {
+  margin: 0.8rem 0;
+  font-size: 1.1rem;
+}
+.contact p i {
+  margin-right: 0.5rem;
+  color: #2da0d2;
+}
+.contact p a {
+  color: #222;
+  font-weight: bold;
+  text-decoration: none;
+}
+.contact p a:hover {
+  text-decoration: underline;
+  color: #2da0d2;
+}
+.contact .contact__buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  margin-top: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+.contact .contact__buttons .btn {
+  width: fit-content;
+  min-width: 250px;
+}
+
 .lang-switcher {
   margin-left: 1rem;
 }
@@ -526,6 +567,62 @@ button {
 }
 .btn--primary:hover {
   background-color: #1b60a6;
+}
+
+.floating-contact {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  z-index: 100;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+}
+.floating-contact__main {
+  background-color: #2da0d2;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 1rem 1.1rem;
+  font-size: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.floating-contact__main:hover {
+  background-color: #1b60a6;
+}
+.floating-contact__menu {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+  opacity: 0;
+  transform: scale(0.95);
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.floating-contact__menu a {
+  background-color: #fff;
+  color: #2da0d2;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  font-size: 1.2rem;
+  transition: background-color 0.3s;
+}
+.floating-contact__menu a:hover {
+  background-color: #2da0d2;
+  color: white;
+}
+.floating-contact__menu.visible {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
 }
 
 .light-theme {

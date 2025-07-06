@@ -1,0 +1,64 @@
+@use '../abstracts/variables';
+
+.floating-contact {
+    position: fixed;
+    bottom: 1.5rem;
+    left: 1.5rem;
+    z-index: 100;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+  
+    &__main {
+      background-color: variables.$primary-color;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      padding: 1rem 1.1rem;
+      font-size: 1.5rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+  
+      &:hover {
+        background-color: variables.$third-color;
+      }
+    }
+  
+    &__menu {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      margin-bottom: 1rem;
+      opacity: 0;
+      transform: scale(0.95);
+      pointer-events: none;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+  
+      a {
+        background-color: variables.$light-bg;
+        color: variables.$primary-color;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        font-size: 1.2rem;
+        transition: background-color 0.3s;
+  
+        &:hover {
+          background-color: variables.$primary-color;
+          color: white;
+        }
+      }
+  
+      &.visible {
+        opacity: 1;
+        transform: scale(1);
+        pointer-events: auto;
+      }
+    }
+}
+  

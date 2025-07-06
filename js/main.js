@@ -103,3 +103,25 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+  const toggleBtn = document.getElementById('toggleContactMenu');
+  const menu = document.getElementById('contactMenu');
+  const floating = document.getElementById('floatingContact');
+  const contactSection = document.getElementById('contact');
+
+  // Toggle menú
+  toggleBtn.addEventListener('click', () => {
+    menu.classList.toggle('visible');
+  });
+
+  // Ocultar botón flotante al llegar a #contact
+  window.addEventListener('scroll', () => {
+    const contactTop = contactSection.getBoundingClientRect().top;
+    if (contactTop < window.innerHeight * 0.3) {
+      floating.style.display = 'none';
+    } else {
+      floating.style.display = 'flex';
+    }
+  });
+});
+

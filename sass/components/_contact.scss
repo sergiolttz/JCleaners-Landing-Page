@@ -1,0 +1,50 @@
+@use '../abstracts/variables';
+
+.contact {
+    padding: 4rem 2rem;
+    background-color: variables.$secondary-color;
+    text-align: center;
+
+    .contact__title {
+        font-size: 2rem;
+        font-weight: bold;
+        color: variables.$primary-color;
+        margin-bottom: 1.5rem;
+    }
+
+    p {
+        margin: 0.8rem 0;
+        font-size: 1.1rem;
+
+        i {
+            margin-right: 0.5rem;
+            color: variables.$primary-color;
+        }
+
+        a {
+            color: variables.$text-dark;
+            font-weight: bold;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+                color: variables.$primary-color;
+            }
+        }
+    }
+
+    .contact__buttons {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        margin-top: 2rem;
+        align-items: center;
+        justify-content: center;
+      
+        .btn {
+          width: fit-content;
+          min-width: 250px;
+        }
+      }
+      
+}
