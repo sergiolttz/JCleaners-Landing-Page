@@ -7,6 +7,19 @@
             variables.$secondary-color 100%);
     height: 70vh;
 
+    .testimonial__avatar-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: variables.$third-color;
+            color: variables.$text-light;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin: 0 auto 1rem;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);   }
+
     .testimonials__title {
         font-size: 2rem;
         font-weight: bold;

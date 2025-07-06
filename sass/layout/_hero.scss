@@ -76,12 +76,14 @@
     h1 {
       font-size: 3rem;
       margin-bottom: 0.5rem;
+      color: variables.$text-light;
       text-shadow: 0 0 10px variables.$shadow;
     }
 
     p {
       font-size: 1.2rem;
       margin-bottom: 1.5rem;
+      color: variables.$text-light;
       text-shadow: 0 0 10px variables.$shadow;
     }
 

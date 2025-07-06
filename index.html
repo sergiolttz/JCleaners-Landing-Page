@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JCleaners Service</title>
     <link rel="stylesheet" href="css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
 </head>
@@ -53,7 +56,7 @@
     
         <div class="hero__content">
         <img src="img/Logo_JCleaners.png" alt="JCleaners logo" class="hero-logo" />
-        <h1 data-i18n="hero.title">We take care</h1>
+        <h1 data-i18n="hero.title">We take care!</h1>
         <p data-i18n="hero.subtitle">Limpieza residencial y comercial</p>
         <a data-i18n="hero.button" href="#contact" class="btn btn--primary">Contáctanos</a>
         </div>
@@ -111,7 +114,9 @@
       <h2 class="testimonials__title">Testimonios</h2>
       <div class="testimonials__container">
         <div class="card card--testimonial">
-          <img class="testimonial__avatar" src="/img/linda.jpg" alt="Foto de Linda A.">
+          <div class="testimonial__avatar-icon">
+            <i class="fa-solid fa-house-user"></i>
+          </div>
           <h3 class="testimonial__name">Linda A.</h3>
           <div class="testimonial__rating">★★★★★</div>
           <blockquote>
@@ -119,7 +124,9 @@
           </blockquote>
         </div>
         <div class="card card--testimonial">
-          <img class="testimonial__avatar" src="/img/linda.jpg" alt="Foto de Linda A.">
+          <div class="testimonial__avatar-icon">
+            <i class="fa-solid fa-house-user"></i>
+          </div>
           <h3 class="testimonial__name">April W.</h3>
           <div class="testimonial__rating">★★★★★</div>
           <blockquote>
@@ -127,7 +134,9 @@
           </blockquote>
         </div>
         <div class="card card--testimonial">
-          <img class="testimonial__avatar" src="/img/linda.jpg" alt="Foto de Linda A.">
+          <div class="testimonial__avatar-icon">
+            <i class="fa-solid fa-house-user"></i>
+          </div>
           <h3 class="testimonial__name">Kevin P.</h3>
           <div class="testimonial__rating">★★★★★</div>
           <blockquote>
@@ -155,10 +164,15 @@
     
     <!-- FOOTER -->
     <footer class="footer">
-        <p>© 2025 JCleaners Service - Sarasota, FL</p>
+      <div class="footer__content">
+        <img src="/img/Logo_JCleaners_no_text.png" alt="JCleaners Service Logo" class="footer__logo" />
+        <p class="footer__text">© 2025 JCleaners Service - Sarasota, FL</p>
+      </div>
     </footer>
+    
 
     <script src="js/main.js"></script>
+
 </body>
 
 <div class="floating-contact" id="floatingContact">
@@ -172,6 +186,8 @@
     <a href="https://instagram.com/jcleanersservice" target="_blank"><i class="fab fa-instagram"></i></a>
   </div>
 </div>
+
+
 
 
 </html>

@@ -8,17 +8,16 @@
 @use 'base/base';
 
 // layout
-@use 'layout/header';
+@use 'layout/navbar';
+@use 'layout/hero';
+@use 'layout/about';
+@use 'layout/services';
+@use 'layout/testimonials';
+@use 'layout/contact';
 @use 'layout/footer';
-@use 'layout/sections';
 
 // components
-@use 'components/navbar';
-@use 'components/hero';
-@use 'components/about';
-@use 'components/services';
-@use 'components/testimonials';
-@use 'components/contact';
+
 @use 'components/lang-changer';
 @use 'components/card';
 @use 'components/button';
