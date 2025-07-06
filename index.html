@@ -30,6 +30,11 @@
   
   <!-- HERO -->
     <section class="hero">
+        <video autoplay muted loop playsinline class="hero__video" id="heroVideo">
+          <source src="img/Jcleaners Hero.webm" type="video/webm" />
+          Tu navegador no soporta video HTML5.
+        </video>
+        <div class="hero__overlay"></div>
         <div class="pseudo-nav">
             <div class="pseudo-nav__container">
               <div class="lang-switcher">
@@ -50,7 +55,7 @@
         <img src="img/Logo_JCleaners.png" alt="JCleaners logo" class="hero-logo" />
         <h1 data-i18n="hero.title">We take care</h1>
         <p data-i18n="hero.subtitle">Limpieza residencial y comercial</p>
-        <button data-i18n="hero.button">Contáctanos</button>
+        <a data-i18n="hero.button" href="#contact" class="btn btn--primary">Contáctanos</a>
         </div>
     </section>
     <!-- SOBRE NOSOTROS -->
