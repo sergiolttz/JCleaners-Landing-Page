@@ -1,3 +1,5 @@
+// Mostrar navbar al hacer scroll
+
 document.addEventListener('DOMContentLoaded', () => {
   const nav = document.getElementById('navbar');
 
@@ -10,6 +12,25 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 });
+
+// Animar tarjetas al entrar en viewport
+const cards = document.querySelectorAll('.card');
+
+const observer = new IntersectionObserver(
+  (entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target); // Solo una vez
+      }
+    });
+  },
+  {
+    threshold: 0.1
+  }
+);
+
+cards.forEach(card => observer.observe(card));
 
 const translations = {
   es: {
@@ -56,5 +77,29 @@ function toggleLanguage() {
 // Asignar evento a todos los botones de cambio de idioma
 document.querySelectorAll('.lang-toggle').forEach(btn => {
   btn.addEventListener('click', toggleLanguage);
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  const servicesSection = document.querySelector('.services');
+  const residentialCard = document.querySelector('.card--residential');
+  const commercialCard = document.querySelector('.card--commercial');
+
+  if (servicesSection && residentialCard && commercialCard) {
+    residentialCard.addEventListener('mouseenter', () => {
+      servicesSection.classList.add('show-residential');
+    });
+
+    residentialCard.addEventListener('mouseleave', () => {
+      servicesSection.classList.remove('show-residential');
+    });
+
+    commercialCard.addEventListener('mouseenter', () => {
+      servicesSection.classList.add('show-commercial');
+    });
+
+    commercialCard.addEventListener('mouseleave', () => {
+      servicesSection.classList.remove('show-commercial');
+    });
+  }
 });
 

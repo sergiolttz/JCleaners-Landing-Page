@@ -1,10 +1,11 @@
 @use '../abstracts/variables';
 
 .testimonials {
-    padding: 4rem 2rem;
+    padding: 7rem 2rem;
     background: linear-gradient(to bottom,
-            variables.$primary-color 0%,
-            lighten(variables.$primary-color, 10) 100%);
+            lighten(variables.$secondary-color, 5%) 0%,
+            variables.$secondary-color 100%);
+    height: 70vh;
 
     .testimonials__title {
         font-size: 2rem;

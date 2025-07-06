@@ -311,9 +311,10 @@ button {
 }
 
 .services {
-  padding: 4rem 2rem;
+  padding: 7rem 2rem;
   background: linear-gradient(to bottom, #e0f7fa 0%, rgb(245.9583333333, 252.6666666667, 253.5416666667) 100%);
   height: 80vh;
+  position: relative;
 }
 .services .services__title {
   font-size: 2rem;
@@ -322,10 +323,32 @@ button {
   text-align: center;
   margin-bottom: 3rem;
 }
+.services .services__bg-img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 1500px;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 0;
+  pointer-events: none;
+}
+.services.show-residential .services__bg-img--residential {
+  opacity: 1;
+}
+.services.show-commercial .services__bg-img--commercial {
+  opacity: 1;
+}
+.services .services__cards {
+  position: relative;
+  z-index: 1;
+}
 
 .testimonials {
-  padding: 4rem 2rem;
-  background: linear-gradient(to bottom, #2da0d2 0%, #57b3db 100%);
+  padding: 7rem 2rem;
+  background: linear-gradient(to bottom, rgb(245.9583333333, 252.6666666667, 253.5416666667) 0%, #e0f7fa 100%);
+  height: 70vh;
 }
 .testimonials .testimonials__title {
   font-size: 2rem;
@@ -379,16 +402,6 @@ button {
   box-shadow: 0 0 10px rgba(17, 17, 17, 0.3294117647);
 }
 
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 .services__cards,
 .testimonials__container {
   display: flex;
@@ -404,21 +417,15 @@ button {
   max-width: 400px;
   width: 100%;
   padding: 2rem;
-  transition: transform 0.3s ease, filter 0.3s ease, opacity 0.3s ease;
   position: relative;
   z-index: 1;
   opacity: 0;
   transform: translateY(20px);
-  animation: fadeInUp 0.6s ease forwards;
+  transition: all 0.6s ease;
 }
-.card:nth-child(1) {
-  animation-delay: 0.1s;
-}
-.card:nth-child(2) {
-  animation-delay: 0.2s;
-}
-.card:nth-child(3) {
-  animation-delay: 0.3s;
+.card.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 .card__content h3 {
   font-size: 1.5rem;
@@ -443,10 +450,6 @@ button {
 .card--testimonial {
   text-align: center;
   max-width: 350px;
-  transition: none;
-  transform: none;
-  filter: none;
-  opacity: 1;
 }
 .card--testimonial .testimonial__avatar {
   width: 80px;
@@ -454,6 +457,7 @@ button {
   border-radius: 50%;
   object-fit: cover;
   margin: 0 auto 1rem;
+  display: block;
 }
 .card--testimonial .testimonial__name {
   font-weight: bold;
@@ -474,15 +478,10 @@ button {
 .card--testimonial blockquote p {
   margin-bottom: 0;
 }
-.card--testimonial:hover {
-  transform: none !important;
-  filter: none !important;
-  opacity: 1 !important;
-}
 
 @media (min-width: 768px) {
   .services__cards:has(.card:not(.card--testimonial):hover) .card:not(:hover):not(.card--testimonial) {
-    filter: brightness(0.6) blur(2px);
+    filter: brightness(1) blur(2px);
     opacity: 0.6;
   }
   .card:not(.card--testimonial):hover {
