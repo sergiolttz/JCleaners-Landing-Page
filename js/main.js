@@ -32,33 +32,76 @@ const observer = new IntersectionObserver(
 
 cards.forEach(card => observer.observe(card));
 
+// Traducciones para el cambio de idioma
 const translations = {
   es: {
     "nav.about": "Sobre Nosotros",
     "nav.services": "Servicios",
     "nav.testimonials": "Testimonios",
     "nav.contact": "Contacto",
-    "hero.title": "We take care",
+    "hero.title": "We take care!",
     "hero.subtitle": "Limpieza residencial y comercial",
     "hero.button": "Contáctanos",
     "about.title": "Sobre Nosotros",
-    "about.description": "JCleaners Service ofrece servicios de limpieza residencial y comercial de alta calidad. Nos enorgullece servir a nuestra comunidad con integridad, puntualidad y atención al detalle."
+    "about.description":
+      "JCleaners Service ofrece servicios de limpieza residencial y comercial de alta calidad. Nos enorgullece servir a nuestra comunidad con integridad, puntualidad y atención al detalle.",
+    "services.title": "Nuestros servicios",
+    "services.residential.title": "Limpieza Residencial",
+    "services.residential.description": "Servicios de limpieza para tu hogar, adaptados a tus necesidades.",
+    "services.residential.item1": "Regular",
+    "services.residential.item2": "Periódica",
+    "services.residential.item3": "Mudanzas",
+    "services.residential.item4": "Casas y Apartamentos",
+    "services.residential.cta": "Agenda tu limpieza residencial",
+    "services.commercial.title": "Limpieza Comercial",
+    "services.commercial.description": "Soluciones de limpieza para oficinas, tiendas y eventos.",
+    "services.commercial.item1": "Áreas comunes y condominios",
+    "services.commercial.item2": "Eventos especiales",
+    "services.commercial.item3": "Oficinas",
+    "services.commercial.item4": "Negocios y tiendas",
+    "services.commercial.cta": "Agenda tu limpieza comercial",
+    "testimonials.title": "Testimonios",
+    "contact.title": "Contáctanos",
+    "contact.email": "Contáctanos por correo",
+    "contact.whatsapp": "Escríbenos por WhatsApp"
   },
   en: {
     "nav.about": "About Us",
     "nav.services": "Services",
     "nav.testimonials": "Testimonials",
     "nav.contact": "Contact",
-    "hero.title": "We take care",
+    "hero.title": "We take care!",
     "hero.subtitle": "Residential and Commercial Cleaning",
     "hero.button": "Contact Us",
     "about.title": "About Us",
-    "about.description": "JCleaners Service provides high-quality residential and commercial cleaning services. We are proud to serve our community with integrity, punctuality, and attention to detail."
+    "about.description":
+      "JCleaners Service provides high-quality residential and commercial cleaning services. We are proud to serve our community with integrity, punctuality, and attention to detail.",
+    "services.title": "Our Services",
+    "services.residential.title": "Residential Cleaning",
+    "services.residential.description": "Cleaning services for your home, tailored to your needs.",
+    "services.residential.item1": "Regular",
+    "services.residential.item2": "Periodic",
+    "services.residential.item3": "Moving",
+    "services.residential.item4": "Houses and Apartments",
+    "services.residential.cta": "Book your residential cleaning",
+    "services.commercial.title": "Commercial Cleaning",
+    "services.commercial.description": "Cleaning solutions for offices, shops, and events.",
+    "services.commercial.item1": "Common areas and condos",
+    "services.commercial.item2": "Special events",
+    "services.commercial.item3": "Offices",
+    "services.commercial.item4": "Businesses and stores",
+    "services.commercial.cta": "Book your commercial cleaning",
+    "testimonials.title": "Testimonials",
+    "contact.title": "Contact Us",
+    "contact.email": "Contact us by email",
+    "contact.whatsapp": "Message us on WhatsApp"
   }
 };
+// Variable para el idioma actual
 
 let currentLang = 'es';
 
+// Función para cambiar el idioma
 function toggleLanguage() {
   currentLang = currentLang === 'es' ? 'en' : 'es';
 
@@ -103,6 +146,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
+// Mostrar menú de contacto flotante
+
 document.addEventListener('DOMContentLoaded', () => {
   const toggleBtn = document.getElementById('toggleContactMenu');
   const menu = document.getElementById('contactMenu');
@@ -112,15 +157,5 @@ document.addEventListener('DOMContentLoaded', () => {
   // Toggle menú
   toggleBtn.addEventListener('click', () => {
     menu.classList.toggle('visible');
-  });
-
-  // Ocultar botón flotante al llegar a #contact
-  window.addEventListener('scroll', () => {
-    const contactTop = contactSection.getBoundingClientRect().top;
-    if (contactTop < window.innerHeight * 0.3) {
-      floating.style.display = 'none';
-    } else {
-      floating.style.display = 'flex';
-    }
   });
 });
