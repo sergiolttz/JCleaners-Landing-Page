@@ -377,11 +377,7 @@ button {
   padding: 4rem;
   display: flex;
   align-items: center;
-<<<<<<< HEAD
-  background-image: url("../img/about-bg.jpg");
-=======
   background-image: url('../img/about-bg.jpg');
->>>>>>> d1f2c28f3d54b35985ab4dcc6fb14d33197f783e
   background-size: cover;
 }
 .about .about__container {
