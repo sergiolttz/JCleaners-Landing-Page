@@ -1,50 +1,100 @@
 @use '../abstracts/variables';
 
 .navbar {
-    position: fixed;
-    top: -100px;
-    left: 0;
-    width: 100%;
-    background-color: variables.$light-bg;
-    z-index: 1000;
-    padding: 1rem 2rem;
-    transition: top 0.5s ease;
-    border-bottom: 10px solid variables.$primary-color;
-    box-shadow: 0 0 10px variables.$shadow;
+  position: fixed;
+  top: -100px;
+  left: 0;
+  width: 100%;
+  background-color: variables.$light-bg;
+  z-index: 1000;
+  padding: 1rem 2rem;
+  transition: top 0.5s ease;
+  border-bottom: 10px solid variables.$primary-color;
+  box-shadow: 0 0 10px variables.$shadow;
 
-    &.visible {
-        top: 0;
+  &.visible {
+    top: 0;
+  }
+
+  .navbar__container {
+    max-width: 90%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  .lang-switcher-nav {
+    z-index: 2;
+  }
+
+  .menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: variables.$primary-color;
+    cursor: pointer;
+    z-index: 10;
+    margin-left: auto;
+  }
+
+  .navbar__menu {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+    margin-left: auto;
+
+    li a {
+      text-decoration: none;
+      color: variables.$text-dark;
+
+      &:hover {
+        color: variables.$primary-color;
+        text-shadow: 0 0 10px variables.$shadow;
+      }
     }
+  }
 
-    .navbar__container {
-        max-width: 90%;
-        margin: 0 auto;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        position: relative;
+  .logo-nav {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 115px;
+    padding: 0.5rem;
+    filter: drop-shadow(0 0 10px variables.$shadow);
+  }
 
-        :hover {
-            color: variables.$primary-color;
-            text-shadow: 0 0 10px variables.$shadow;
-        }
+  @media (max-width: 992px) {
+    .menu-toggle {
+      display: block;
     }
-
 
     .navbar__menu {
-        display: flex;
-        gap: 1.5rem;
-        list-style: none;
-        margin-left: auto;
-    }
+      display: none;
+      flex-direction: column;
+      align-items: flex-end;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      background-color: variables.$light-bg;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 
-    .logo-nav {
-        position: absolute;
-        top: 100%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 115px;
-        padding: 0.5rem;
-        filter: drop-shadow(0 0 10px variables.$shadow); 
+      &.active {
+        display: flex;
+      }
+
+      li {
+        margin-bottom: 1rem;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
     }
+  }
 }

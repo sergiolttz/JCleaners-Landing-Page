@@ -159,3 +159,15 @@ document.addEventListener('DOMContentLoaded', () => {
     menu.classList.toggle('visible');
   });
 });
+
+// Mostrar/ocultar menú de navegación al hacer clic en el botón de menú
+document.addEventListener("DOMContentLoaded", () => {
+  const toggleBtn = document.querySelector(".menu-toggle");
+  const navLinks = document.querySelector(".nav-links");
+
+  if (toggleBtn && navLinks) {
+    toggleBtn.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
+  }
+});

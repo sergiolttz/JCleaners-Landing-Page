@@ -11,55 +11,101 @@
   text-align: center;
   padding: 2rem;
   box-shadow: 0 0 10px variables.$shadow;
-  
-    .hero__video {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        z-index: -1;
-        pointer-events: none;
-        opacity: 1;
+
+  .hero__video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 1;
+  }
+
+  .hero__overlay {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(to bottom, rgba(0, 0, 0, 0.6), transparent 150px),
+      rgba(0, 0, 0, 0.4); // Oscurece todo y añade degradado arriba
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .pseudo-nav {
+    max-width: 90%;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding: 1rem;
+    z-index: 1;
+
+    .pseudo-nav__container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
     }
 
-    .hero__overlay {
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(to bottom, rgba(0, 0, 0, 0.6), transparent 150px),
-        rgba(0, 0, 0, 0.4); // Oscurece todo y añade degradado arriba
-      z-index: 0;
-      pointer-events: none;
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.8rem;
+      color: variables.$text-light;
+      cursor: pointer;
+      z-index: 10;
     }
 
-    .pseudo-nav {
-        max-width: 90%;
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+
+      li a {
+        text-decoration: none;
+        color: variables.$text-light;
+
+        &:hover {
+          color: variables.$primary-color;
+          text-shadow: 0 0 10px variables.$shadow;
+        }
+      }
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        align-items: flex-end;
         position: absolute;
-        top: 0;
-        width: 100%;
+        top: 100%;
+        right: 0;
+        background-color: variables.$third-color;
         padding: 1rem;
-        z-index: 1;
+        border-radius: 0.5rem;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 
-        .pseudo-nav__container {
-            
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        &.active {
+          display: flex;
         }
 
-        ul {
-            display: flex;
-            gap: 1.5rem;
-            list-style: none;
+        li {
+          margin-bottom: 1rem;
 
-            :hover {
-              color: variables.$primary-color;  
-              text-shadow: 0 0 10px variables.$shadow;
-            }
+          &:last-child {
+            margin-bottom: 0;
+          }
         }
+      }
     }
+  }
 
   .hero__content {
     display: flex;
@@ -86,7 +132,6 @@
       color: variables.$text-light;
       text-shadow: 0 0 10px variables.$shadow;
     }
-
   }
 }
 
