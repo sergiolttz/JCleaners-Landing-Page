@@ -5,6 +5,9 @@
   top: -100px;
   left: 0;
   width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow-x:visible;
   background-color: variables.$light-bg;
   z-index: 1000;
   padding: 1rem 2rem;
@@ -17,8 +20,10 @@
   }
 
   .navbar__container {
-    max-width: 90%;
+    max-width: 100%;
     margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
     display: flex;
     align-items: center;
     justify-content: space-between;

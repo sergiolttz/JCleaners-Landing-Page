@@ -7,7 +7,6 @@
       lighten(variables.$secondary-color, 5%) 100%);
   position: relative;
 
-
   .services__title {
     font-size: 2rem;
     font-weight: bold;
@@ -21,19 +20,31 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    max-width: 1500px;
+    max-width: 100%;
+    width: 100%;
     opacity: 0;
     transition: opacity 0.5s ease;
     z-index: 0;
     pointer-events: none;
+
+    /* Por defecto ocultar en móviles */
+    display: none;
   }
 
-  &.show-residential .services__bg-img--residential {
-    opacity: 1;
-  }
+  /* Mostrar imágenes solo en pantallas >= 769px */
+  @media (min-width: 769px) {
+    .services__bg-img {
+      display: block;
+      max-width: 1500px;
+    }
 
-  &.show-commercial .services__bg-img--commercial {
-    opacity: 1;
+    &.show-residential .services__bg-img--residential {
+      opacity: 1;
+    }
+
+    &.show-commercial .services__bg-img--commercial {
+      opacity: 1;
+    }
   }
 
   .services__cards {
