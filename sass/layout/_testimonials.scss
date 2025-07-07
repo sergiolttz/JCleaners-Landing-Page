@@ -5,20 +5,6 @@
     background: linear-gradient(to bottom,
             lighten(variables.$secondary-color, 5%) 0%,
             variables.$secondary-color 100%);
-    height: 70vh;
-
-    .testimonial__avatar-icon {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            background-color: variables.$third-color;
-            color: variables.$text-light;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            margin: 0 auto 1rem;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);   }
 
     .testimonials__title {
         font-size: 2rem;
@@ -30,8 +16,80 @@
 
     .testimonials__container {
         display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
+        flex-direction: row;
+        overflow-x: auto;
         gap: 2rem;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 1rem;
+
+        // Ocultar barra de scroll (opcional)
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        scrollbar-width: none;
+
+        .card--testimonial {
+            flex: 0 0 auto; 
+            width: 80%;
+            max-width: 300px;
+            min-width: 250px;
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            scroll-snap-align: center;
+
+            .testimonial__avatar-icon {
+                width: 80px;
+                height: 80px;
+                border-radius: 50%;
+                background-color: variables.$third-color;
+                color: variables.$text-light;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 1.8rem;
+                margin: 0 auto 1rem;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+
+            .testimonial__name {
+                font-weight: bold;
+                margin-bottom: 0.5rem;
+                color: variables.$text-dark;
+            }
+
+            .testimonial__rating {
+                color: gold;
+                margin-bottom: 1rem;
+                font-size: 1.2rem;
+            }
+
+            blockquote {
+                p {
+                    font-style: italic;
+                    color: #333;
+                }
+            }
+        }
+    }
+
+    // Estilo solo para escritorio (pantallas grandes)
+    @media (min-width: 769px) {
+        .testimonials__container {
+            flex-wrap: wrap;
+            justify-content: center;
+            overflow-x: visible;
+            scroll-snap-type: none;
+        }
+
+        .card--testimonial {
+            flex: 0 1 300px;
+            width: 100%;
+            scroll-snap-align: none;
+        }
     }
 }
