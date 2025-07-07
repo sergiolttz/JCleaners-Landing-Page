@@ -578,6 +578,21 @@ button {
   min-width: 250px;
 }
 
+@media (max-width: 768px) {
+  .contact {
+    padding: 2rem 1rem;
+  }
+  .contact .contact__title {
+    font-size: 1.5rem;
+  }
+  .contact p {
+    font-size: 1rem;
+  }
+  .contact .contact__buttons {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
 .footer {
   background-color: #1b60a6;
   padding: 2rem;

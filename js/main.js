@@ -160,14 +160,38 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-// Mostrar/ocultar menú de navegación al hacer clic en el botón de menú
+// Mostrar/ocultar menú de navegación para moviles
 document.addEventListener("DOMContentLoaded", () => {
-  const toggleBtn = document.querySelector(".menu-toggle");
-  const navLinks = document.querySelector(".nav-links");
 
-  if (toggleBtn && navLinks) {
-    toggleBtn.addEventListener("click", () => {
-      navLinks.classList.toggle("active");
+  // === NAVBAR ===
+  const realToggle = document.querySelector(".menu-toggle--real");
+  const realMenu = document.querySelector(".navbar__menu");
+
+  if (realToggle && realMenu) {
+    realToggle.addEventListener("click", () => {
+      realMenu.classList.toggle("active");
     });
+
+    realMenu.querySelectorAll("a").forEach(link =>
+      link.addEventListener("click", () => {
+        realMenu.classList.remove("active");
+      })
+    );
+  }
+
+  // === PSEUDO-NAV (HERO) ===
+  const pseudoToggle = document.querySelector(".menu-toggle--pseudo");
+  const pseudoMenu = document.querySelector(".nav-links");
+
+  if (pseudoToggle && pseudoMenu) {
+    pseudoToggle.addEventListener("click", () => {
+      pseudoMenu.classList.toggle("active");
+    });
+
+    pseudoMenu.querySelectorAll("a").forEach(link =>
+      link.addEventListener("click", () => {
+        pseudoMenu.classList.remove("active");
+      })
+    );
   }
 });

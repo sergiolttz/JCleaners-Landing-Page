@@ -47,3 +47,22 @@
         }
       }
 }
+
+@media (max-width: variables.$breakpoint-md) {
+    .contact {
+        padding: 2rem 1rem;
+
+        .contact__title {
+            font-size: 1.5rem;
+        }
+
+        p {
+            font-size: 1rem;
+        }
+
+        .contact__buttons {
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+    }
+}
